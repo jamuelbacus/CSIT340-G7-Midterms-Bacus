@@ -22,7 +22,7 @@ function Hire({ rate }) {
           Add hour
         </button>
         <button
-          className="cursor-pointer rounded-lg border-2 border-[#FAF3E1] px -8 py-3 text-xl font-bold"
+          className="cursor-pointer rounded-lg border-2 border-[#FAF3E1] px-8 py-3 text-xl font-bold"
           onClick={handleClear}
         >
           Clear
