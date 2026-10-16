@@ -39,7 +39,7 @@ function Profile() {
           />
         </div>
       </div>
-      <Hire rate={rate} />
+      <Hire props={{ rate }} />
     </>
   );
 }
