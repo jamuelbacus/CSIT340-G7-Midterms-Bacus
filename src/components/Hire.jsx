@@ -2,7 +2,7 @@ import { useState } from "react";
 
 function Hire({ rate }) {
   const [hours, setHours] = useState(0);
-  const handleAddHours = () => setHours(hours + 1);
+  const handleAddHour = () => setHours(hours + 1);
   const handleClear = () => setHours(0);
 
   return (
@@ -16,8 +16,8 @@ function Hire({ rate }) {
       </div>
       <div className="flex gap-4">
         <button
-          className="cursor-pointer rounded-lg bg-[#Fa8112] px-8 py-3 text-xl font-bold text-[#222222]"
-          onClick={handleAddHours}
+          className="cursor-pointer rounded-lg bg-[#FA8112] px-8 py-3 text-xl font-bold text-[#222222]"
+          onClick={handleAddHour}
         >
           Add hour
         </button>
