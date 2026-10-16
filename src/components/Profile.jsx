@@ -22,23 +22,25 @@ function Profile() {
   }
 
   return (
-    <div className="flex items-end justify-between bg-[#F5E7C6] px-20 py-10">
-      <div>
-        <Bio name="Jamuel Halili Bacus" username="jamuelbacus" />
-        <div className="mt-6 flex gap-6">
-          <StatCard value={followers} label="Followers" />
-          <StatCard value={rate} label="PHP per hour" />
+    <>
+      <div className="flex items-end justify-between bg-[#F5E7C6] px-20 py-10">
+        <div>
+          <Bio name="Jamuel Halili Bacus" username="jamuelbacus" />
+          <div className="mt-6 flex gap-6">
+            <StatCard value={followers} label="Followers" />
+            <StatCard value={rate} label="PHP per hour" />
+          </div>
+        </div>
+        <div className="flex gap-4">
+          <Controls
+            handleFollow={handleFollow}
+            handleAddRate={handleAddRate}
+            handleReset={handleReset}
+          />
         </div>
       </div>
       <Hire rate={rate} />
-      <div className="flex gap-4">
-        <Controls
-          handleFollow={handleFollow}
-          handleAddRate={handleAddRate}
-          handleReset={handleReset}
-        />
-      </div>
-    </div>
+    </>
   );
 }
 
