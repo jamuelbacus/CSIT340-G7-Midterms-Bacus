@@ -18,32 +18,48 @@ function Repositories() {
     setDotfilesStars(dotfilesStars + 1);
   }
 
+  const repositories = [
+    {
+      name: "portfolio",
+      description: "My personal page built with React.",
+      language: "JavaScript",
+      commits: 48,
+      handleStar: handleStarPortfolio,
+      stars: portfolioStars,
+    },
+    {
+      name: "todo-api",
+      description: "A small REST API for a to-do list.",
+      language: "Java",
+      commits: 31,
+      handleStar: handleStarTodo,
+      stars: todoStars,
+    },
+    {
+      name: "dotfiles",
+      description: "My terminal and editor settings.",
+      language: "Shell",
+      commits: 12,
+      handleStar: handleStarDotfiles,
+      stars: dotfilesStars,
+    },
+  ];
+
   return (
     <main className="grid grid-cols-3 gap-8 px-20 pt-8">
-      <RepoCard
-        name="portfolio"
-        description="My personal page built with React."
-        language="JavaScript"
-        commits={48}
-        handleStar={handleStarPortfolio}
-        stars={portfolioStars}
-      />
-      <RepoCard
-        name="todo-api"
-        description="A small REST API for a to-do list."
-        language="Java"
-        commits={31}
-        handleStar={handleStarTodo}
-        stars={todoStars}
-      />
-      <RepoCard
-        name="dotfiles"
-        description="My terminal and editor settings."
-        language="Shell"
-        commits={12}
-        handleStar={handleStarDotfiles}
-        stars={dotfilesStars}
-      />
+      {repositories.map((repo) => {
+        return (
+          <RepoCard
+            key={repo.name}
+            name={repo.name}
+            description={repo.description}
+            language={repo.language}
+            commits={repo.commits}
+            handleStar={repo.handleStar}
+            stars={repo.stars}
+          />
+        );
+      })}
     </main>
   );
 }
